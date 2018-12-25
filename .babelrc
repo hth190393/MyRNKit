@@ -1,0 +1,26 @@
+{
+  "presets": [
+      "react-native",
+      "flow"
+  ],
+  "plugins": [
+      "transform-decorators-legacy",
+      [
+          "module-resolver",
+          {
+              "cwd": "babelrc",
+              "alias": {
+                  "@js": "./js",
+                  "@images": "./images",
+                  "underscore": "lodash"
+              },
+              "extensions": [
+                  ".android.js",
+                  ".ios.js",
+                  ".js"
+              ]
+          }
+      ]
+  ],
+  "retainLines": true
+}

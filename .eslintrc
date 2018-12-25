@@ -1,0 +1,91 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true
+    },
+    "extends": "airbnb",
+    "plugins": [
+        "react",
+        "jsx-a11y",
+        "import",
+        "react-native"
+    ],
+    "globals": {
+        "window": true
+    },
+    "rules": {
+        "radix": [
+            "error",
+            "as-needed"
+        ],
+        "jsx-a11y/anchor-has-content": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": "off",
+        "react/forbid-prop-types": "off",
+        "no-use-before-define": "off",
+        "import/prefer-default-export": "off",
+        "import/extensions": "off",
+        "react/sort-comp": "off",
+        "global-require": "off",
+        "no-throw-literal": "off",
+        "no-plusplus": "off",
+        "no-return-assign": "off",
+        "no-unused-expressions": "off",
+        "no-unused-vars": "warn",
+        "no-mixed-operators": "off", // simple view of mix
+        "max-len": [
+            "error",
+            150
+        ],
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "always-multiline",
+                "exports": "always-multiline",
+                "functions": "ignore"
+            }
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "linebreak-style": [
+            "warn",
+            "unix"
+        ], //   end of line with unix style
+        "no-underscore-dangle": [
+            "off",
+            {
+                "allowAfterThis": true
+            }
+        ],
+        "react/no-unused-prop-types": [
+            "off",
+            {
+                "skipShapeProps": true
+            }
+        ],
+        "react/require-default-props": "warn",
+        "consistent-return": ["warn"]
+
+
+    },
+
+
+    "settings": {
+        "import/resolver": {
+            "babel-module": {}
+        }
+    }
+}

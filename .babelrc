@@ -1,3 +1,23 @@
 {
-  "presets": ["module:metro-react-native-babel-preset"]
+  "presets": [
+    "module:metro-react-native-babel-preset"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "cwd": "babelrc",
+        "alias": {
+          "@js": "./js",
+          "@images": "./images",
+          "underscore": "lodash"
+        },
+        "extensions": [
+          ".android.js",
+          ".ios.js",
+          ".js"
+        ]
+      }
+    ]
+  ]
 }

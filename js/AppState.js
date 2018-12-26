@@ -40,7 +40,6 @@ class AppWithNavigationState extends PureComponent {
 
   render() {
     const { nav } = this.props;
-    console.log('NNNN', nav)
     return (
       <View style={{ position: 'relative', flex: 1 }}>
         <AppNavigator

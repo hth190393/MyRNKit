@@ -21,7 +21,6 @@ import Home from '@js/screens/Home';
 console.disableYellowBox = true;
 // console.disableYellowBox = true;
 
-
 const MyDrawerNavigator = createDrawerNavigator(
   {
     Login: {
@@ -42,4 +41,21 @@ const MyDrawerNavigator = createDrawerNavigator(
   }
 );
 
-export default createAppContainer(MyDrawerNavigator);
+const MyStackRouter = createStackNavigator(
+  {
+    MyDrawerNavigator: {
+      screen: MyDrawerNavigator,
+    },
+    Login: {
+      screen: Login,
+    },
+    Home: {
+      screen: Home,
+    },
+  },
+  {
+    headerMode: 'none',
+  }
+);
+
+export default createAppContainer(MyStackRouter);

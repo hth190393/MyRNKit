@@ -7,7 +7,7 @@ export default class Login extends Component {
   }
 
   openHome = () => {
-    this.props.navigation.navigate('Home')
+    this.props.navigation.push('Home')
   }
 
   render() {

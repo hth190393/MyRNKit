@@ -21,13 +21,24 @@ import Home from '@js/screens/Home';
 console.disableYellowBox = true;
 // console.disableYellowBox = true;
 
-const MyDrawerNavigator = createDrawerNavigator(
+const AuthStack = createStackNavigator(
   {
     Login: {
       screen: Login,
     },
+  },
+  {
+    headerMode: 'none',
+  }
+);
+
+const MyDrawerNavigator = createDrawerNavigator(
+  {
     Home: {
       screen: Home,
+    },
+    Login: {
+      screen: Login,
     },
   },
   {
@@ -38,23 +49,29 @@ const MyDrawerNavigator = createDrawerNavigator(
     drawerCloseRoute: "DrawerClose",
     drawerToggleRoute: "DrawerToggle",
     // drawerBackgroundColor: "transparent",
+    // initialRouteName: 'Home',
   }
 );
 
-const MyStackRouter = createStackNavigator(
+const AppStack = createStackNavigator(
   {
     MyDrawerNavigator: {
       screen: MyDrawerNavigator,
     },
-    Login: {
-      screen: Login,
-    },
-    Home: {
-      screen: Home,
-    },
   },
   {
     headerMode: 'none',
+  }
+);
+
+const MyStackRouter = createSwitchNavigator(
+  {
+    AuthLoading: Login,
+    App: AppStack,
+    Auth: AuthStack,
+  },
+  {
+    initialRouteName: 'AuthLoading',
   }
 );
 

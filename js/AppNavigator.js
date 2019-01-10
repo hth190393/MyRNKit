@@ -17,9 +17,7 @@ import { connect } from 'react-redux';
 import { Text, View, Image, Button, StyleSheet } from 'react-native';
 import Login from '@js/screens/Login';
 import Home from '@js/screens/Home';
-
-console.disableYellowBox = true;
-// console.disableYellowBox = true;
+import Test from '@js/screens/Test';
 
 const AuthStack = createStackNavigator(
   {
@@ -37,8 +35,8 @@ const MyDrawerNavigator = createDrawerNavigator(
     Home: {
       screen: Home,
     },
-    Login: {
-      screen: Login,
+    Test: {
+      screen: Test,
     },
   },
   {

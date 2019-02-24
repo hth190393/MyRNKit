@@ -13,8 +13,8 @@ import {
   createStackNavigator,
   createSwitchNavigator,
 } from 'react-navigation';
-import { connect } from 'react-redux';
-import { Text, View, Image, Button, StyleSheet } from 'react-native';
+import StackViewStyleInterpolator from 'react-navigation-stack/dist/views/StackView/StackViewStyleInterpolator';
+
 import Login from '@js/screens/Login';
 import Home from '@js/screens/Home';
 import Test from '@js/screens/Test';
@@ -43,9 +43,9 @@ const MyDrawerNavigator = createDrawerNavigator(
     drawerType: 'slide',
     drawerBackgroundColor: 'yellow',
     // drawerWidth: 100,
-    drawerOpenRoute: "DrawerOpen",
-    drawerCloseRoute: "DrawerClose",
-    drawerToggleRoute: "DrawerToggle",
+    drawerOpenRoute: 'DrawerOpen',
+    drawerCloseRoute: 'DrawerClose',
+    drawerToggleRoute: 'DrawerToggle',
     // drawerBackgroundColor: "transparent",
     // initialRouteName: 'Home',
   }
@@ -56,9 +56,19 @@ const AppStack = createStackNavigator(
     MyDrawerNavigator: {
       screen: MyDrawerNavigator,
     },
+    Test1: {
+      screen: Test,
+    },
   },
   {
     headerMode: 'none',
+    mode: 'card',
+    transitionConfig: () => ({
+      // screenInterpolator: CardStackStyleInterpolator.forHorizontal,
+      screenInterpolator: StackViewStyleInterpolator.forHorizontal,
+    }),
+    navigationOptions: () => ({
+    }),
   }
 );
 

@@ -7,8 +7,8 @@ export default class Login extends Component {
   }
 
   openLogin = () => {
-    // this.props.navigation.push('Test');
-    this.props.navigation.navigate('Test')
+    this.props.navigation.push('Test1');
+    // this.props.navigation.navigate('Test')
     // this.props.navigation.goBack();
   }
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import Lottie from 'lottie-react-native';
-import wiggly from './wiggly.json';
+// import wiggly from './wiggly.json';
+import wiggly from './santa_riding_bike.json';
 
 export default class Anim extends React.Component {
   state = {
@@ -25,7 +26,7 @@ export default class Anim extends React.Component {
               style={{
                 width: 400,
                 height: 400,
-                backgroundColor: "#fff"
+                backgroundColor: 'black',
               }}
               source={this.state.animation}
               speed={this.state.speed}
@@ -66,7 +67,7 @@ export default class Anim extends React.Component {
               <Button
                 title="Back"
                 color="#4caf50"
-                onPress={() => this.props.navigation.navigate('Home')}
+                onPress={() => this.props.navigation.pop()}
               />
             </View>
           </View>
@@ -99,7 +100,7 @@ export default class Anim extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: '100%',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
@@ -108,7 +109,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    flex: 1,
   },
   speedBtnContainer: {
     flexDirection: 'row',
